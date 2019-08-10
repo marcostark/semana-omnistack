@@ -14,7 +14,7 @@ import {
 import logo from '../assets/logo.png'
 
 export default function Login({ navigation }) {
-  const {user, setUser} = useState('');
+  const [user, setUser] = useState('');
 
   useEffect(() => {
     AsyncStorage.getItem('user').then(user => {

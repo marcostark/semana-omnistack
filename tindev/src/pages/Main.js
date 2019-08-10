@@ -25,7 +25,7 @@ export default function Main({ navigation }) {
 
         }
         loadUsers();
-    }, [match.params.id]);
+    }, [id]);
 
     async function handleLike() {
         const [user, ...rest] = users;
@@ -65,7 +65,7 @@ export default function Main({ navigation }) {
                { users.length === 0 
             ? <Text style={styles.empty}> Acabou :(</Text>
             : (
-                users.map((user, index) => (
+                 users.map((user, index) => (
                     <View key={user._id} style={[styles.card, { zIndex: users.length - index }]}>
                     <Image style={styles.avatar} source={{ uri: user.avatar}} />
                     <View style={styles.footer}>
@@ -74,6 +74,7 @@ export default function Main({ navigation }) {
                     </View>
                 </View>
                ))
+                
             )}
             </View>
             { users.length > 0 && (
@@ -87,7 +88,8 @@ export default function Main({ navigation }) {
                     <Image source={like} />
                 </TouchableOpacity>
             </View>
-            )}
+
+            )} 
         </SafeAreaView>
     )
 }
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 0,
         left: 0,
-        width: 0,
+        right: 0,
         bottom: 0,
     },
 
@@ -159,7 +161,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         backgroundColor: '#FFF',
         justifyContent: 'center',
-        alignContent: 'center',
+        alignItems: 'center',
         marginHorizontal: 20,
         elevation: 2,
     },
