@@ -87,5 +87,3 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 © 2019 GitHub, Inc.
-
-server.js
